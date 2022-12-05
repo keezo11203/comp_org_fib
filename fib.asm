@@ -28,3 +28,8 @@
         
         j while                             # goes back to beginning of the loop
         
+    exit:
+        move $a0, $t2                       # moves v0 value into a0
+        
+        jal fibonacci                       # jump and link to fibonacci
+        move $a0, $v0

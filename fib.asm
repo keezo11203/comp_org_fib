@@ -45,4 +45,6 @@
         move $s0, $a0
         li $v0, 1                              # returns value for terminal condition
         ble $s0, 0x2, fibExit                  # checks terminal condition
-        addi $
+        addi $a0, $s0, -1                      # sets args for recursive call to f(n-1)
+        jal fibonacci
+        move %s1, $v0                          # store result of f(n-1) to s1

@@ -39,7 +39,10 @@
             syscall
     fibonacci:
         addi $sp, $sp, -12
-        sw $ra, 0(%sp)
+        sw $ra, 0($sp)
         sw $s0, 4($sp)
         sw $s1, 0($sp)
         move $s0, $a0
+        li $v0, 1                              # returns value for terminal condition
+        ble $s0, 0x2, fibExit                  # checks terminal condition
+        addi $

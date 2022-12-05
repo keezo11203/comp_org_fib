@@ -6,7 +6,6 @@
     final: .asciiz "The fibonacci sequence is:\n"
     
 #where the instructions are
-
 .text
 .global main
     main:
@@ -18,3 +17,5 @@
         
         li $v0, s
         syscall
+        
+        move $t2, $v0                       # moves v0 into t2

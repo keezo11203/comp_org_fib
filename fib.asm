@@ -44,7 +44,14 @@
         sw $s1, 0($sp)
         move $s0, $a0
         li $v0, 1                              # returns value for terminal condition
-        ble $s0, 0x2, fibExit                  # checks terminal condition
+        ble $s0, 0x2, fibonacciExit                  # checks terminal condition
         addi $a0, $s0, -1                      # sets args for recursive call to f(n-1)
         jal fibonacci
-        move %s1, $v0                          # store result of f(n-1) to s1
+        move $s1, $v0                          # store result of f(n-1) to s1
+        addi $v0, $s0, -2                      # set args for recursive call to f(n-2)
+        jal fibonacci                          
+        add $v0, $s1, $v0                      # add result of f(n-1) to it
+    
+    fibonacciExit
+        
+    

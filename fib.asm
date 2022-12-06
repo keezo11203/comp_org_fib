@@ -37,6 +37,7 @@
         
             li $v0, 10
             syscall
+            
     fibonacci:
         addi $sp, $sp, -12
         sw $ra, 0($sp)

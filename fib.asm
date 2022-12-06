@@ -53,5 +53,8 @@
         add $v0, $s1, $v0                      # add result of f(n-1) to it
     
     fibonacciExit
-        
-    
+        lw $ra, 0($sp)
+        lw $s0, 4($sp)
+        lw $s1, 0($sp)
+        addi $sp, $sp, 12
+        jr $ra
